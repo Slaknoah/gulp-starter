@@ -1,12 +1,145 @@
-body {
-    color: purple
+@import '../modules/normalize';
+@import '../modules/swiper';
+
+$primary_color: #DAA520;
+$dark: #3E3F43;
+$light-dark: #222222;
+$cont-width: 1024px;
+
+/**
+* Break points
+*/
+
+// Iphone 5 screens
+$screen-xs-max: 330px;
+
+// Small tablets and large smartphones (landscape view)
+$screen-sm-max: 576px;
+
+// Small tablets (portrait view)
+$screen-md-max: 768px;
+
+// Tablets and small desktops
+$screen-lg-max: 992px;
+
+// Large tablets and desktops
+$screen-xl-max: 1200px;
+
+/**
+  Mixins
+**/
+// Extra small devices max
+@mixin xs {
+  @media (max-width: #{$screen-xs-max}) {
+    @content;
+  }
 }
 
-.icon {
-    width: 100px;
-    height: 100px;
+// Small devices
+@mixin sm {
+  @media (max-width: #{$screen-sm-max}) {
+    @content;
+  }
 }
 
-.icon-facebook:hover {
-    fill: blue;
+// Medium devices
+@mixin md {
+  @media (max-width: #{$screen-md-max}) {
+    @content;
+  }
+}
+
+// Large devices
+@mixin lg {
+  @media (max-width: #{$screen-lg-max}) {
+    @content;
+  }
+}
+
+@mixin lg-min {
+  @media (min-width: #{$screen-lg-max}) {
+    @content;
+  }
+}
+
+// Extra large devices
+@mixin xl {
+  @media (max-width: #{$screen-xl-max}) {
+    @content;
+  }
+}
+
+// Custom (random width devices)
+@mixin rwd($screen) {
+  @media (max-width: $screen) {
+    @content;
+  }
+}
+
+@mixin rwd-min($screen) {
+  @media (min-width: $screen) {
+    @content;
+  }
+}
+
+
+@font-face{
+    font-display:swap;
+    font-family:Geometria;
+    src: url(../../fonts/geometria/geometriaextrabold.eot);
+    src: url(../../fonts/geometria/geometriaextrabold.eot?#iefix) format("embedded-opentype"),
+        url(../../fonts/geometria/geometriaextrabold.woff) format("woff"),
+        url(../../fonts/geometria/geometriaextrabold.ttf) format("truetype"),
+        url(../../fonts/geometria/geometriaextrabold.svg?#webfont) format("svg");
+    font-weight:900;
+    font-style:normal
+}
+
+@font-face{
+    font-display:swap;
+    font-family:Geometria;
+    src: url(../../font/geometria/Geometria-Light.eot);
+    src: url(../../font/geometria/Geometria-Light.eot?#iefix) format("embedded-opentype"),
+        url(../../font/geometria/Geometria-Light.woff2) format("woff2"),
+        url(../../font/geometria/Geometria-Light.woff) format("woff"),
+        url(../../font/geometria/Geometria-Light.ttf) format("truetype"),
+        url(../../font/geometria/Geometria-Light.svg#Geometria-Light) format("svg");
+    font-weight:300;
+    font-style:normal
+}
+@font-face{
+    font-display:swap;
+    font-family:Geometria;
+    src:url(../../font/geometria/Geometria-Bold.eot);
+    src:url(../../font/geometria/Geometria-Bold.eot?#iefix) format("embedded-opentype"),
+        url(../../font/geometria/Geometria-Bold.woff2) format("woff2"),
+        url(../../font/geometria/Geometria-Bold.woff) format("woff"),
+        url(../../font/geometria/Geometria-Bold.ttf) format("truetype"),
+        url(../../font/geometria/Geometria-Bold.svg#Geometria-Bold) format("svg");
+    font-weight:700;
+    font-style:normal
+}
+@font-face{
+    font-display:swap;
+    font-family:Geometria;
+    src: url(../../font/geometria/Geometria.eot);
+    src: url(../../font/geometria/Geometria.eot?#iefix) format("embedded-opentype"),
+        url(../../font/geometria/Geometria.woff2) format("woff2"),
+        url(../../font/geometria/Geometria.woff) format("woff"),
+        url(../../font/geometria/Geometria.ttf) format("truetype"),
+        url(../../font/geometria/Geometria.svg#Geometria) format("svg");
+    font-weight:400;
+    font-style:normal
+}
+@font-face{
+    font-display:swap;
+    font-family:Geometria;
+    src: url(../../font/geometria/Geometria-Italic.eot);
+    src: url(../../font/geometria/Geometria-Italic.eot?#iefix) format("embedded-opentype"),
+        url(../../font/geometria/Geometria-Italic.woff2) format("woff2"),
+        url(../../font/geometria/Geometria-Italic.woff) format("woff"),
+        url(../../fonts/geometria/Geometria-Italic.ttf) format("truetype"),
+        url(../../fonts/geometria/Geometria-Italic.svg#Geometria-Italic) format("svg");
+    font-weight:400;
+    font-style:italic
 }
